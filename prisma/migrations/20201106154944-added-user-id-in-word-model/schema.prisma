@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -15,8 +15,6 @@ model Word {
   word String
   translation String
   userId Int 
-
-  @@unique(fields: [id, userId], name:"userWord")
 }
 
 model User {

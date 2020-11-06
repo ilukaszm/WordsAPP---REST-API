@@ -1,0 +1,25 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Model",
+          "model": "Word",
+          "arguments": [
+            {
+              "name": "fields",
+              "value": "[id, userId]"
+            },
+            {
+              "name": "name",
+              "value": "\"userWord\""
+            }
+          ]
+        },
+        "directive": "unique"
+      }
+    }
+  ]
+}

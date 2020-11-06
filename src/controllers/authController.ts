@@ -22,28 +22,28 @@ export const userRegister = async (req: Request, res: Response) => {
 
     const { password: pass, ...result } = newUser;
 
-    res.json(result);
-  } else {
-    res.json({ error: 'User exists' });
-    res.status(403);
+    return res
+      .status(200)
+      .send({ data: result, message: 'Your account was created successfully.' });
   }
+  return res.status(403).send({ error: 'User exists!' });
 };
 
 export const userLogout = (req: Request, res: Response) => {
   req.logout();
-  res.redirect('/');
+  return res.redirect('/');
 };
 
 export const getUser = (req: Request, res: Response) => {
   const { user } = req;
 
-  res.json(user);
+  return res.status(200).send({ data: user });
 };
 
 export const userGoogleAuth = (req: Request, res: Response) => {
-  res.redirect('/');
+  return res.redirect('/');
 };
 
 export const userFacebookAuth = (req: Request, res: Response) => {
-  res.redirect('/');
+  return res.redirect('/');
 };

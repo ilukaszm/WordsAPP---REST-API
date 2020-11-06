@@ -9,3 +9,5 @@
 20201105211829-initial-migration-on-database-server
 20201106120304-changed-properties-records---google-id-and-facebok-id
 20201106124337-changed-property-avatar-url
+20201106154944-added-user-id-in-word-model
+20201106164520-added-multi-field-in-word-model
