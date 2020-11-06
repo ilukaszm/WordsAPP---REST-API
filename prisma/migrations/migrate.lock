@@ -1,3 +1,9 @@
 # Prisma Migrate lockfile v1
 
 20201031171659-initial-migration-of-word
+20201105172928-added-new-model---user
+20201105173608
+20201105173653-update-user-model--password--google-id--facebook-id
+20201105195432
+20201105195458-update-default-vaules-in-user-model
+20201105211829-initial-migration-on-database-server

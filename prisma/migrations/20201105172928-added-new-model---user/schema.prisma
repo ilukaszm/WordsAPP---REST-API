@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "postgres"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url = "***"
 }
 
 generator client {
@@ -18,12 +18,9 @@ model Word {
 
 model User {
   id Int @id @default(autoincrement())
-  password String?
   email String @unique
-  avatarURL String? @default("")
-  gameSound Boolean? @default(false)
-  gamePoints Int? @default(0)
-  numberOfLevels Int? @default(5)
-  googleID String? @default("")
-  facebookID String? @default("")
+  avatarURL String
+  gameSound Boolean
+  gamePoints Int
+  numberOfLevels Int
 }

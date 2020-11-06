@@ -2,4 +2,4 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const { word } = prisma;
+export const { word, user } = prisma;
