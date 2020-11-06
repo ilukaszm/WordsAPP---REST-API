@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -20,7 +20,7 @@ model User {
   id Int @id @default(autoincrement())
   password String?
   email String @unique
-  avatarURL String? 
+  avatarURL String? @default("")
   gameSound Boolean? @default(false)
   gamePoints Int? @default(0)
   numberOfLevels Int? @default(5)

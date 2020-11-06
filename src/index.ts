@@ -24,7 +24,7 @@ app.use(
     secret: process.env.COOKIE_KEY,
     resave: false,
     saveUninitialized: false,
-  })
+  }),
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -33,7 +33,8 @@ app.use('/api', apiRoute);
 app.use('/auth', authRoute);
 
 app.get('/', (req, res) => {
-  res.json({ message: 'hello world!' });
+  res.json({ message: 'hello world!!!!!!' });
 });
 
-app.listen(PORT, () => console.log(`Server has started on localhost:${PORT}`));
+/* eslint-disable no-console */
+app.listen(PORT, () => console.log(`Server has started on localhost:${PORT}!`));

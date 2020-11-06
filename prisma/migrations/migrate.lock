@@ -7,3 +7,5 @@
 20201105195432
 20201105195458-update-default-vaules-in-user-model
 20201105211829-initial-migration-on-database-server
+20201106120304-changed-properties-records---google-id-and-facebok-id
+20201106124337-changed-property-avatar-url
