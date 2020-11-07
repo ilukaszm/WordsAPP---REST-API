@@ -6,8 +6,8 @@ import cors from 'cors';
 import passport from 'passport';
 import dotenv from 'dotenv';
 
-import apiRoute from './routes/apiRoutes';
-import authRoute from './routes/authRoutes';
+import wordsRoute from './routes/wordsRoutes';
+import userRoute from './routes/userRoutes';
 import './services/passport';
 
 dotenv.config();
@@ -32,8 +32,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api', apiRoute);
-app.use('/auth', authRoute);
+app.get('/', (req, res) => res.json({ message: 'Welcome on wordsAPP Api server!' }));
+
+app.use('/words', wordsRoute);
+app.use('/user', userRoute);
 
 /* eslint-disable no-console */
 app.listen(PORT, () => console.log(`Server has started on localhost:${PORT}!`));

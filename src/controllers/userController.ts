@@ -2,9 +2,10 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 
 import { user } from '../models';
+import { IGetUserAuthInfoRequest } from '../shared';
 
 export const userLogin = (req: Request, res: Response) => {
-  res.redirect('/auth/user');
+  res.status(200).send({ message: 'You are logged in.' });
 };
 
 export const userRegister = async (req: Request, res: Response) => {
@@ -31,7 +32,7 @@ export const userRegister = async (req: Request, res: Response) => {
 
 export const userLogout = (req: Request, res: Response) => {
   req.logout();
-  return res.redirect('/');
+  return res.status(200).send({ message: 'You are logged out.' });
 };
 
 export const getUser = (req: Request, res: Response) => {
@@ -41,9 +42,42 @@ export const getUser = (req: Request, res: Response) => {
 };
 
 export const userGoogleAuth = (req: Request, res: Response) => {
-  return res.redirect('/');
+  res.status(200).send({ message: 'You are logged in.' });
 };
 
 export const userFacebookAuth = (req: Request, res: Response) => {
-  return res.redirect('/');
+  res.status(200).send({ message: 'You are logged in.' });
+};
+
+export const updateUserProfile = async (req: IGetUserAuthInfoRequest, res: Response) => {
+  const { id } = req.user;
+
+  type RequestBody = {
+    password: string;
+    email: string;
+    avatarURL: string;
+    gameSound: boolean;
+    gamePoints: number;
+    numberOfLevels: number;
+  };
+
+  const { password, avatarURL, gameSound, gamePoints, numberOfLevels }: RequestBody = req.body;
+
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(password, salt);
+
+  await user.update({
+    where: {
+      id,
+    },
+    data: {
+      password: hashedPassword,
+      avatarURL,
+      gameSound,
+      gamePoints,
+      numberOfLevels,
+    },
+  });
+
+  return res.status(200).send({ message: 'Word was updated.' });
 };
