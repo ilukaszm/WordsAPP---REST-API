@@ -42,7 +42,7 @@ export const getUser = (req: Request, res: Response) => {
 };
 
 export const userGoogleAuth = (req: Request, res: Response) => {
-  res.status(200).send({ message: 'You are logged in.' });
+  res.status(200).send({ message: 'You are logged in.' }).redirect('/');
 };
 
 export const userFacebookAuth = (req: Request, res: Response) => {
