@@ -23,9 +23,9 @@ This project is simple rest api server with authentication for my **WordsAPP** p
 
 ### Install 💾
 
-To use project you must have **PostgreSQL** database. Add database URL to **prisma/.env**. Create file .env with your facebook and google api keys to authenticate. More info: [here]:(http://www.passportjs.org/packages/passport-google-oauth/)
+To use project you must have **PostgreSQL** database. Add database URL to **prisma/.env**. Create file .env with your facebook and google api keys to authenticate. More info: [here](http://www.passportjs.org/packages/passport-google-oauth/)
 and
-[here]: (http://www.passportjs.org/packages/passport-facebook/).
+[here](http://www.passportjs.org/packages/passport-facebook/).
 
 Use commands:
 
