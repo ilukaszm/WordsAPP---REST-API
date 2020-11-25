@@ -6,7 +6,7 @@
 
 ## About project 📖
 
-This project is simple reast api server with authentication for my **WordsAPP** project, which you can see [here](https://https://github.com/ilukaszm/wordsAPP).
+This project is simple rest api server with authentication for my **WordsAPP** project, which you can see [here](https://https://github.com/ilukaszm/wordsAPP).
 
 ### Technology stack
 
@@ -14,24 +14,32 @@ This project is simple reast api server with authentication for my **WordsAPP** 
 - ExpressJS - web framework for Node.js
 - PassportJS - authentication for Node.js
 - Bcrypt - library to hash password
-- Express Validator - library to data validation
+- Express Validator - middleware to data validation
 - Prisma - database toolkit
+- Husky - Pre-commit tool
+- Lint-staged - Pre-commit tool
+- Eslint - javascript linter
+- Prettier - code formatter
 
 ### Install 💾
 
-To use project you must have **PostgreSQL** database. Add database URL to **prisma/.env**. Use commands:
+To use project you must have **PostgreSQL** database. Add database URL to **prisma/.env**. Create file .env with your facebook and google api keys to authenticate. More info: [here]:(http://www.passportjs.org/packages/passport-google-oauth/)
+and
+[here]: (http://www.passportjs.org/packages/passport-facebook/).
+
+Use commands:
 
 > npm install
 
-to intall all dependencies
+to install all dependencies
 
 > npm run dev
 
 to running development server
 
-> npm run build 
+> npm run build
 
-to building project
+to build project
 
 ### License 📝
 
